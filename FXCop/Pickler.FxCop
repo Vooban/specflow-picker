@@ -1,0 +1,2125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FxCopProject Version="10.0" Name="My FxCop Project">
+ <ProjectOptions>
+  <SharedProject>True</SharedProject>
+  <Stylesheet Apply="False">$(FxCopDir)\Xml\FxCopReport.xsl</Stylesheet>
+  <SaveMessages>
+   <Project Status="Active, Excluded, Good, Noise" NewOnly="False" />
+   <Report Status="Active, Good, Noise" NewOnly="False" />
+  </SaveMessages>
+  <ProjectFile Compress="True" DefaultTargetCheck="True" DefaultRuleCheck="True" SaveByRuleGroup="" Deterministic="True" />
+  <EnableMultithreadedLoad>True</EnableMultithreadedLoad>
+  <EnableMultithreadedAnalysis>True</EnableMultithreadedAnalysis>
+  <SourceLookup>True</SourceLookup>
+  <AnalysisExceptionsThreshold>10</AnalysisExceptionsThreshold>
+  <RuleExceptionsThreshold>1</RuleExceptionsThreshold>
+  <Spelling Locale="en-US" />
+  <OverrideRuleVisibilities>False</OverrideRuleVisibilities>
+  <CustomDictionaries SearchFxCopDir="True" SearchUserProfile="True" SearchProjectDir="True" />
+  <SearchGlobalAssemblyCache>False</SearchGlobalAssemblyCache>
+  <DeadlockDetectionTimeout>120</DeadlockDetectionTimeout>
+  <IgnoreGeneratedCode>False</IgnoreGeneratedCode>
+ </ProjectOptions>
+ <Targets>
+  <Target Name="$(ProjectDir)/../bin/Pickler.exe" Analyze="True" AnalyzeAllChildren="True" />
+ </Targets>
+ <Rules>
+  <RuleFiles>
+   <RuleFile Name="$(FxCopDir)\Rules\DesignRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\GlobalizationRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\InteroperabilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\MobilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\NamingRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\PerformanceRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\PortabilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\SecurityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\SecurityTransparencyRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\UsageRules.dll" Enabled="True" AllRulesEnabled="True" />
+  </RuleFiles>
+  <Groups />
+  <Settings />
+ </Rules>
+ <FxCopReport Version="10.0">
+  <Namespaces>
+   <Namespace Name="Pickler">
+    <Messages>
+     <Message Id="Pickler" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2011-09-21 06:07:57Z">
+      <Issue Name="Namespace">
+       <Item>Pickler</Item>
+       <Item>Pickler</Item>
+      </Issue>
+      <Notes>
+       <User Name="Tims iPod">
+        <Note Id="4" />
+       </User>
+      </Notes>
+     </Message>
+    </Messages>
+   </Namespace>
+  </Namespaces>
+  <Targets>
+   <Target Name="$(ProjectDir)/../bin/Pickler.exe">
+    <Modules>
+     <Module Name="pickler.exe">
+      <Messages>
+       <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Excluded" Created="2011-09-21 06:07:57Z">
+        <Issue Name="NoStrongName">
+         <Item>'Pickler.exe'</Item>
+        </Issue>
+        <Notes>
+         <User Name="Tims iPod">
+          <Note Id="1" />
+         </User>
+        </Notes>
+       </Message>
+       <Message Id="Pickler" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2011-09-21 06:07:57Z">
+        <Issue Name="Assembly">
+         <Item>Pickler</Item>
+         <Item>'Pickler.exe'</Item>
+        </Issue>
+        <Notes>
+         <User Name="Tims iPod">
+          <Note Id="0" />
+         </User>
+        </Notes>
+       </Message>
+       <Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Status="Excluded" Created="2011-09-21 06:07:57Z">
+        <Issue>
+         <Item>'Pickler.exe'</Item>
+        </Issue>
+        <Notes>
+         <User Name="Tims iPod">
+          <Note Id="3" />
+         </User>
+        </Notes>
+       </Message>
+       <Message TypeName="MarkAssembliesWithComVisible" Category="Microsoft.Design" CheckId="CA1017" Status="Excluded" Created="2011-09-21 06:07:57Z">
+        <Issue Name="NoAttribute" Level="CriticalError">
+         <Item>'Pickler.exe'</Item>
+        </Issue>
+        <Notes>
+         <User Name="Tims iPod">
+          <Note Id="2" />
+         </User>
+        </Notes>
+       </Message>
+       <Message TypeName="MarkAssembliesWithNeutralResourcesLanguage" Category="Microsoft.Performance" CheckId="CA1824" Status="Excluded" Created="2011-09-21 06:07:57Z">
+        <Issue>
+         <Item>'Pickler.exe'</Item>
+        </Issue>
+        <Notes>
+         <User Name="Tims iPod">
+          <Note Id="3" />
+         </User>
+        </Notes>
+       </Message>
+      </Messages>
+      <Namespaces>
+       <Namespace Name="ICSharpCode.AvalonEdit.AddIn">
+        <Types>
+         <Type Name="CaretReferencesRenderer">
+          <Members>
+           <Member Name="#GetExpressionAtCaret()">
+            <Messages>
+             <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Created="2012-01-01 05:35:47Z">
+              <Issue Name="IsNullOrEmpty">
+               <Item>'string.operator !=(string, string)'</Item>
+               <Item>'CaretReferencesRenderer.GetExpressionAtCaret()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Restart(System.Windows.Threading.DispatcherTimer)">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2012-01-01 05:35:47Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>'CaretReferencesRenderer.Restart(DispatcherTimer)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ExpressionHighlightRenderer">
+          <Members>
+           <Member Name="#SetHighlight(System.Collections.Generic.List`1&lt;ICSharpCode.AvalonEdit.Document.TextSegment&gt;)">
+            <Messages>
+             <Message TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'List&lt;TextSegment&gt;'</Item>
+               <Item>'ExpressionHighlightRenderer.SetHighlight(List&lt;TextSegment&gt;)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="Pickler">
+        <Types>
+         <Type Name="AboutWindow">
+          <Members>
+           <Member Name="#System.Windows.Markup.IComponentConnector.Connect(System.Int32,System.Object)">
+            <Messages>
+             <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Created="2012-01-01 05:35:47Z">
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'AboutWindow'</Item>
+               <Item>'AboutWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'AboutWindow'</Item>
+               <Item>'AboutWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'Label'</Item>
+               <Item>'AboutWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'Label'</Item>
+               <Item>'AboutWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'AboutWindow'</Item>
+               <Item>'IComponentConnector.Connect(int, object)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Window_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+            <Messages>
+             <Message Id="System.Int32.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2012-01-01 05:35:47Z">
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'int.ToString()'</Item>
+               <Item>'AboutWindow.Window_Loaded(object, RoutedEventArgs)'</Item>
+               <Item>'int.ToString(IFormatProvider)'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="App">
+          <Members>
+           <Member Name="#Parms">
+            <Messages>
+             <Message Id="Parms" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2012-01-01 05:35:47Z">
+              <Issue Name="Member">
+               <Item>Parms</Item>
+               <Item>'App.Parms'</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'App.Parms'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ConfigurationFile">
+          <Members>
+           <Member Name="#CreateDefaultConfigFile()">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Excluded" Created="2011-09-21 06:16:09Z">
+              <Issue>
+               <Item>'ConfigurationFile.CreateDefaultConfigFile()'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+              <Notes>
+               <User Name="Tims iPod">
+                <Note Id="7" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#GetFileFilters(System.Xml.XmlNodeList)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Excluded" Created="2011-09-21 06:16:09Z">
+              <Issue>
+               <Item>'ConfigurationFile.GetFileFilters(XmlNodeList)'</Item>
+               <Item>'object'</Item>
+              </Issue>
+              <Notes>
+               <User Name="Tims iPod">
+                <Note Id="7" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Status="Excluded" Created="2011-09-21 06:16:09Z">
+              <Issue Name="IsNullOrEmpty">
+               <Item>'string.operator ==(string, string)'</Item>
+               <Item>'ConfigurationFile.GetFileFilters(XmlNodeList)'</Item>
+              </Issue>
+              <Notes>
+               <User Name="Tims iPod">
+                <Note Id="11" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#LoadFromConfigurationFile()">
+            <Messages>
+             <Message Id="System.Convert.ToInt32(System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Excluded" Created="2011-09-21 06:16:09Z">
+              <Issue Name="IFormatProviderAlternate">
+               <Item>'Convert.ToInt32(object)'</Item>
+               <Item>'ConfigurationFile.LoadFromConfigurationFile()'</Item>
+               <Item>'Convert.ToInt32(object, IFormatProvider)'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternate">
+               <Item>'Convert.ToInt32(object)'</Item>
+               <Item>'ConfigurationFile.LoadFromConfigurationFile()'</Item>
+               <Item>'Convert.ToInt32(object, IFormatProvider)'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternate">
+               <Item>'Convert.ToInt32(object)'</Item>
+               <Item>'ConfigurationFile.LoadFromConfigurationFile()'</Item>
+               <Item>'Convert.ToInt32(object, IFormatProvider)'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Notes>
+               <User Name="Tims iPod">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+             <Message Id="System.Convert.ToInt32(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Excluded" Created="2011-09-21 06:16:09Z">
+              <Issue Name="IFormatProviderAlternate">
+               <Item>'Convert.ToInt32(string)'</Item>
+               <Item>'ConfigurationFile.LoadFromConfigurationFile()'</Item>
+               <Item>'Convert.ToInt32(string, IFormatProvider)'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternate">
+               <Item>'Convert.ToInt32(string)'</Item>
+               <Item>'ConfigurationFile.LoadFromConfigurationFile()'</Item>
+               <Item>'Convert.ToInt32(string, IFormatProvider)'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternate">
+               <Item>'Convert.ToInt32(string)'</Item>
+               <Item>'ConfigurationFile.LoadFromConfigurationFile()'</Item>
+               <Item>'Convert.ToInt32(string, IFormatProvider)'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternate">
+               <Item>'Convert.ToInt32(string)'</Item>
+               <Item>'ConfigurationFile.LoadFromConfigurationFile()'</Item>
+               <Item>'Convert.ToInt32(string, IFormatProvider)'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternate">
+               <Item>'Convert.ToInt32(string)'</Item>
+               <Item>'ConfigurationFile.LoadFromConfigurationFile()'</Item>
+               <Item>'Convert.ToInt32(string, IFormatProvider)'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Notes>
+               <User Name="Tims iPod">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+             <Message Id="System.Single.Parse(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Excluded" Created="2011-09-21 06:16:09Z">
+              <Issue Name="IFormatProviderAlternate">
+               <Item>'float.Parse(string)'</Item>
+               <Item>'ConfigurationFile.LoadFromConfigurationFile()'</Item>
+               <Item>'float.Parse(string, IFormatProvider)'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Notes>
+               <User Name="Tims iPod">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+             <Message Id="System.String.Format(System.String,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Excluded" Created="2011-09-28 06:01:22Z">
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, object, object)'</Item>
+               <Item>'ConfigurationFile.LoadFromConfigurationFile()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, object, object)'</Item>
+               <Item>'ConfigurationFile.LoadFromConfigurationFile()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, object, object)'</Item>
+               <Item>'ConfigurationFile.LoadFromConfigurationFile()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, object, object)'</Item>
+               <Item>'ConfigurationFile.LoadFromConfigurationFile()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, object, object)'</Item>
+               <Item>'ConfigurationFile.LoadFromConfigurationFile()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, object, object)'</Item>
+               <Item>'ConfigurationFile.LoadFromConfigurationFile()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, object, object)'</Item>
+               <Item>'ConfigurationFile.LoadFromConfigurationFile()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, object, object)'</Item>
+               <Item>'ConfigurationFile.LoadFromConfigurationFile()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, object, object)'</Item>
+               <Item>'ConfigurationFile.LoadFromConfigurationFile()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, object, object)'</Item>
+               <Item>'ConfigurationFile.LoadFromConfigurationFile()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, object, object)'</Item>
+               <Item>'ConfigurationFile.LoadFromConfigurationFile()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, object, object)'</Item>
+               <Item>'ConfigurationFile.LoadFromConfigurationFile()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Notes>
+               <User Name="TimDaniels">
+                <Note Id="2" />
+               </User>
+              </Notes>
+             </Message>
+             <Message Id="System.String.Format(System.String,System.Object,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Excluded" Created="2011-09-21 06:16:09Z">
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, object, object, object)'</Item>
+               <Item>'ConfigurationFile.LoadFromConfigurationFile()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Notes>
+               <User Name="Tims iPod">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+             <Message Id="System.String.Format(System.String,System.Object[])" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Excluded" Created="2011-09-28 06:01:22Z">
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, params object[])'</Item>
+               <Item>'ConfigurationFile.LoadFromConfigurationFile()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, params object[])'</Item>
+               <Item>'ConfigurationFile.LoadFromConfigurationFile()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, params object[])'</Item>
+               <Item>'ConfigurationFile.LoadFromConfigurationFile()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, params object[])'</Item>
+               <Item>'ConfigurationFile.LoadFromConfigurationFile()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Notes>
+               <User Name="TimDaniels">
+                <Note Id="2" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Save()">
+            <Messages>
+             <Message Id="System.Int32.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Excluded" Created="2011-09-21 06:16:09Z">
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'int.ToString()'</Item>
+               <Item>'ConfigurationFile.Save()'</Item>
+               <Item>'int.ToString(IFormatProvider)'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'int.ToString()'</Item>
+               <Item>'ConfigurationFile.Save()'</Item>
+               <Item>'int.ToString(IFormatProvider)'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'int.ToString()'</Item>
+               <Item>'ConfigurationFile.Save()'</Item>
+               <Item>'int.ToString(IFormatProvider)'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'int.ToString()'</Item>
+               <Item>'ConfigurationFile.Save()'</Item>
+               <Item>'int.ToString(IFormatProvider)'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Notes>
+               <User Name="Tims iPod">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+             <Message Id="System.Single.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Excluded" Created="2011-09-21 06:16:09Z">
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'float.ToString()'</Item>
+               <Item>'ConfigurationFile.Save()'</Item>
+               <Item>'float.ToString(IFormatProvider)'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Notes>
+               <User Name="Tims iPod">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+             <Message Id="System.String.Format(System.String,System.Object,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Excluded" Created="2011-09-28 06:01:22Z">
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, object, object)'</Item>
+               <Item>'ConfigurationFile.Save()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, object, object)'</Item>
+               <Item>'ConfigurationFile.Save()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, object, object)'</Item>
+               <Item>'ConfigurationFile.Save()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, object, object)'</Item>
+               <Item>'ConfigurationFile.Save()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, object, object)'</Item>
+               <Item>'ConfigurationFile.Save()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, object, object)'</Item>
+               <Item>'ConfigurationFile.Save()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, object, object)'</Item>
+               <Item>'ConfigurationFile.Save()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, object, object)'</Item>
+               <Item>'ConfigurationFile.Save()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, object, object)'</Item>
+               <Item>'ConfigurationFile.Save()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, object, object)'</Item>
+               <Item>'ConfigurationFile.Save()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, object, object)'</Item>
+               <Item>'ConfigurationFile.Save()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, object, object)'</Item>
+               <Item>'ConfigurationFile.Save()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Notes>
+               <User Name="TimDaniels">
+                <Note Id="2" />
+               </User>
+              </Notes>
+             </Message>
+             <Message Id="System.String.Format(System.String,System.Object[])" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Excluded" Created="2011-09-28 06:01:22Z">
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, params object[])'</Item>
+               <Item>'ConfigurationFile.Save()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, params object[])'</Item>
+               <Item>'ConfigurationFile.Save()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, params object[])'</Item>
+               <Item>'ConfigurationFile.Save()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, params object[])'</Item>
+               <Item>'ConfigurationFile.Save()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, params object[])'</Item>
+               <Item>'ConfigurationFile.Save()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Notes>
+               <User Name="TimDaniels">
+                <Note Id="2" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#SaveFont()">
+            <Messages>
+             <Message Id="System.Single.ToString" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Excluded" Created="2011-09-28 06:01:22Z">
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'float.ToString()'</Item>
+               <Item>'ConfigurationFile.SaveFont()'</Item>
+               <Item>'float.ToString(IFormatProvider)'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Notes>
+               <User Name="TimDaniels">
+                <Note Id="2" />
+               </User>
+              </Notes>
+             </Message>
+             <Message Id="System.String.Format(System.String,System.Object[])" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Excluded" Created="2011-09-28 06:01:22Z">
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, params object[])'</Item>
+               <Item>'ConfigurationFile.SaveFont()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, params object[])'</Item>
+               <Item>'ConfigurationFile.SaveFont()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, params object[])'</Item>
+               <Item>'ConfigurationFile.SaveFont()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, params object[])'</Item>
+               <Item>'ConfigurationFile.SaveFont()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, params object[])'</Item>
+               <Item>'ConfigurationFile.SaveFont()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Notes>
+               <User Name="TimDaniels">
+                <Note Id="2" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Globals">
+          <Messages>
+           <Message Id="Globals" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2011-09-21 06:07:57Z">
+            <Issue Name="Type">
+             <Item>Globals</Item>
+             <Item>'Globals'</Item>
+            </Issue>
+            <Notes>
+             <User Name="Tims iPod">
+              <Note Id="4" />
+             </User>
+            </Notes>
+           </Message>
+           <Message TypeName="StaticHolderTypesShouldNotHaveConstructors" Category="Microsoft.Design" CheckId="CA1053" Status="Excluded" Created="2011-09-21 06:07:57Z">
+            <Issue Name="CSharp2_0">
+             <Item>'Globals'</Item>
+            </Issue>
+            <Notes>
+             <User Name="Tims iPod">
+              <Note Id="10" />
+             </User>
+            </Notes>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="#Keywords">
+            <Messages>
+             <Message TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211" Status="Excluded" Created="2011-09-28 06:01:22Z">
+              <Issue>
+               <Item>'Globals.Keywords'</Item>
+              </Issue>
+              <Notes>
+               <User Name="TimDaniels">
+                <Note Id="1" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819" Status="Excluded" Created="2011-09-29 05:56:14Z">
+              <Issue>
+               <Item>'Globals.Keywords'</Item>
+              </Issue>
+              <Notes>
+               <User Name="TimDaniels">
+                <Note Id="4" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Reserved">
+            <Messages>
+             <Message TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211" Status="Excluded" Created="2011-09-28 06:01:22Z">
+              <Issue>
+               <Item>'Globals.Reserved'</Item>
+              </Issue>
+              <Notes>
+               <User Name="TimDaniels">
+                <Note Id="1" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819" Status="Excluded" Created="2011-09-29 05:56:14Z">
+              <Issue>
+               <Item>'Globals.Reserved'</Item>
+              </Issue>
+              <Notes>
+               <User Name="TimDaniels">
+                <Note Id="4" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="MainWindow">
+          <Members>
+           <Member Name="#AboutOpen(System.Object,System.Windows.RoutedEventArgs)">
+            <Messages>
+             <Message Id="dialogResult" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'MainWindow.AboutOpen(object, RoutedEventArgs)'</Item>
+               <Item>'dialogResult'</Item>
+               <Item>'bool?'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#AddBlankLineAfterTable(System.Collections.Generic.List`1&lt;System.String&gt;)">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2012-01-01 05:35:47Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>'MainWindow.AddBlankLineAfterTable(List&lt;string&gt;)'</Item>
+              </Issue>
+             </Message>
+             <Message Id="System.String.StartsWith(System.String)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'string.StartsWith(string)'</Item>
+               <Item>'MainWindow.AddBlankLineAfterTable(List&lt;string&gt;)'</Item>
+               <Item>'string.StartsWith(string, StringComparison)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ApplyFolding(ICSharpCode.AvalonEdit.TextEditor)">
+            <Messages>
+             <Message Id="scenarioText" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'MainWindow.ApplyFolding(TextEditor)'</Item>
+               <Item>'scenarioText'</Item>
+               <Item>'string'</Item>
+              </Issue>
+             </Message>
+             <Message Id="System.String.StartsWith(System.String)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'string.StartsWith(string)'</Item>
+               <Item>'MainWindow.ApplyFolding(TextEditor)'</Item>
+               <Item>'string.StartsWith(string, StringComparison)'</Item>
+              </Issue>
+              <Issue>
+               <Item>'string.StartsWith(string)'</Item>
+               <Item>'MainWindow.ApplyFolding(TextEditor)'</Item>
+               <Item>'string.StartsWith(string, StringComparison)'</Item>
+              </Issue>
+              <Issue>
+               <Item>'string.StartsWith(string)'</Item>
+               <Item>'MainWindow.ApplyFolding(TextEditor)'</Item>
+               <Item>'string.StartsWith(string, StringComparison)'</Item>
+              </Issue>
+              <Issue>
+               <Item>'string.StartsWith(string)'</Item>
+               <Item>'MainWindow.ApplyFolding(TextEditor)'</Item>
+               <Item>'string.StartsWith(string, StringComparison)'</Item>
+              </Issue>
+              <Issue>
+               <Item>'string.StartsWith(string)'</Item>
+               <Item>'MainWindow.ApplyFolding(TextEditor)'</Item>
+               <Item>'string.StartsWith(string, StringComparison)'</Item>
+              </Issue>
+              <Issue>
+               <Item>'string.StartsWith(string)'</Item>
+               <Item>'MainWindow.ApplyFolding(TextEditor)'</Item>
+               <Item>'string.StartsWith(string, StringComparison)'</Item>
+              </Issue>
+              <Issue>
+               <Item>'string.StartsWith(string)'</Item>
+               <Item>'MainWindow.ApplyFolding(TextEditor)'</Item>
+               <Item>'string.StartsWith(string, StringComparison)'</Item>
+              </Issue>
+              <Issue>
+               <Item>'string.StartsWith(string)'</Item>
+               <Item>'MainWindow.ApplyFolding(TextEditor)'</Item>
+               <Item>'string.StartsWith(string, StringComparison)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ApplyMruSettings()">
+            <Messages>
+             <Message Id="System.String.Format(System.String,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2012-01-01 05:35:47Z">
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, object)'</Item>
+               <Item>'MainWindow.ApplyMruSettings()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, object)'</Item>
+               <Item>'MainWindow.ApplyMruSettings()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, object)'</Item>
+               <Item>'MainWindow.ApplyMruSettings()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, object)'</Item>
+               <Item>'MainWindow.ApplyMruSettings()'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+             </Message>
+             <Message Id="System.String.EndsWith(System.String)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'string.EndsWith(string)'</Item>
+               <Item>'MainWindow.ApplyMruSettings()'</Item>
+               <Item>'string.EndsWith(string, StringComparison)'</Item>
+              </Issue>
+              <Issue>
+               <Item>'string.EndsWith(string)'</Item>
+               <Item>'MainWindow.ApplyMruSettings()'</Item>
+               <Item>'string.EndsWith(string, StringComparison)'</Item>
+              </Issue>
+              <Issue>
+               <Item>'string.EndsWith(string)'</Item>
+               <Item>'MainWindow.ApplyMruSettings()'</Item>
+               <Item>'string.EndsWith(string, StringComparison)'</Item>
+              </Issue>
+              <Issue>
+               <Item>'string.EndsWith(string)'</Item>
+               <Item>'MainWindow.ApplyMruSettings()'</Item>
+               <Item>'string.EndsWith(string, StringComparison)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ApplySyntax(ICSharpCode.AvalonEdit.TextEditor)">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2012-01-01 05:35:47Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>'MainWindow.ApplySyntax(TextEditor)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#CollapseAllFolds(System.Object,System.Windows.RoutedEventArgs)">
+            <Messages>
+             <Message Id="currentEditor" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'MainWindow.CollapseAllFolds(object, RoutedEventArgs)'</Item>
+               <Item>'currentEditor'</Item>
+               <Item>'TextEditor'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Contents">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'MainWindow.Contents'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#CreateContextMenu()">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2012-01-01 05:35:47Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>'MainWindow.CreateContextMenu()'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Edit_KeyUp(System.Object,System.Windows.Input.KeyEventArgs)">
+            <Messages>
+             <Message Id="System.String.IndexOf(System.String,System.Int32)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'string.IndexOf(string, int)'</Item>
+               <Item>'MainWindow.Edit_KeyUp(object, KeyEventArgs)'</Item>
+               <Item>'string.IndexOf(string, int, StringComparison)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ExpandAllFolds(System.Object,System.Windows.RoutedEventArgs)">
+            <Messages>
+             <Message Id="currentEditor" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'MainWindow.ExpandAllFolds(object, RoutedEventArgs)'</Item>
+               <Item>'currentEditor'</Item>
+               <Item>'TextEditor'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#LoadConfig()">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'MainWindow.LoadConfig()'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#LoadEditorConfig(ICSharpCode.AvalonEdit.TextEditor)">
+            <Messages>
+             <Message Id="fsc" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'MainWindow.LoadEditorConfig(TextEditor)'</Item>
+               <Item>'fsc'</Item>
+               <Item>'FontSizeConverter'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#LoadFileView(System.String)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'MainWindow.LoadFileView(string)'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+             </Message>
+             <Message Id="cfr" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'MainWindow.LoadFileView(string)'</Item>
+               <Item>'cfr'</Item>
+               <Item>'CaretReferencesRenderer'</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Created="2012-01-01 05:35:47Z">
+              <Issue Name="IsNullOrEmpty">
+               <Item>'string.operator ==(string, string)'</Item>
+               <Item>'MainWindow.LoadFileView(string)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#mChangeFont">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'MainWindow.mChangeFont'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#mClose">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'MainWindow.mClose'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#mCloseAll">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'MainWindow.mCloseAll'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#mEdit">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'MainWindow.mEdit'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Menu1">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'MainWindow.Menu1'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#mFile">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'MainWindow.mFile'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#mFold">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'MainWindow.mFold'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#mHelp">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'MainWindow.mHelp'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#mOpen">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'MainWindow.mOpen'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#mReformatAll">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'MainWindow.mReformatAll'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#mReformatFile">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'MainWindow.mReformatFile'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#MRUVisible(System.Object,System.Windows.Input.CanExecuteRoutedEventArgs)">
+            <Messages>
+             <Message Id="System.Convert.ToInt32(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2012-01-01 05:35:47Z">
+              <Issue Name="IFormatProviderAlternate">
+               <Item>'Convert.ToInt32(string)'</Item>
+               <Item>'MainWindow.MRUVisible(object, CanExecuteRoutedEventArgs)'</Item>
+               <Item>'Convert.ToInt32(string, IFormatProvider)'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#mSaveAll">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'MainWindow.mSaveAll'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#mSaveAs">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'MainWindow.mSaveAs'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#mSep1">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'MainWindow.mSep1'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#mSep2">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'MainWindow.mSep2'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#mSep4">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'MainWindow.mSep4'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#mSep5">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'MainWindow.mSep5'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#mSep6">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'MainWindow.mSep6'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#mToggleWhitespace">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'MainWindow.mToggleWhitespace'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#mToggleWrapping">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'MainWindow.mToggleWrapping'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#mUnFold">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'MainWindow.mUnFold'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ReformatFile(ICSharpCode.AvalonEdit.TextEditor)">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'MainWindow.ReformatFile(TextEditor)'</Item>
+               <Item>'Exception'</Item>
+              </Issue>
+             </Message>
+             <Message Id="System.String.Format(System.String,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2012-01-01 05:35:47Z">
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, object)'</Item>
+               <Item>'MainWindow.ReformatFile(TextEditor)'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+             </Message>
+             <Message Id="System.String.StartsWith(System.String)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'string.StartsWith(string)'</Item>
+               <Item>'MainWindow.ReformatFile(TextEditor)'</Item>
+               <Item>'string.StartsWith(string, StringComparison)'</Item>
+              </Issue>
+              <Issue>
+               <Item>'string.StartsWith(string)'</Item>
+               <Item>'MainWindow.ReformatFile(TextEditor)'</Item>
+               <Item>'string.StartsWith(string, StringComparison)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ReformatPipeTable(System.Collections.Generic.List`1&lt;System.String&gt;,System.Int32)">
+            <Messages>
+             <Message Id="data" TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'MainWindow.ReformatPipeTable(List&lt;string&gt;, int)'</Item>
+               <Item>'data'</Item>
+               <Item>'Dictionary&lt;int, string&gt;'</Item>
+              </Issue>
+             </Message>
+             <Message Id="startingLineFromMainFile" TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801" Created="2012-01-01 05:35:47Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>'startingLineFromMainFile'</Item>
+               <Item>'MainWindow.ReformatPipeTable(List&lt;string&gt;, int)'</Item>
+              </Issue>
+             </Message>
+             <Message Id="System.String.Format(System.String,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2012-01-01 05:35:47Z">
+              <Issue Name="IFormatProviderAlternateString">
+               <Item>'string.Format(string, object)'</Item>
+               <Item>'MainWindow.ReformatPipeTable(List&lt;string&gt;, int)'</Item>
+               <Item>'string.Format(IFormatProvider, string, params object[])'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+             </Message>
+             <Message Id="System.String.EndsWith(System.String)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'string.EndsWith(string)'</Item>
+               <Item>'MainWindow.ReformatPipeTable(List&lt;string&gt;, int)'</Item>
+               <Item>'string.EndsWith(string, StringComparison)'</Item>
+              </Issue>
+             </Message>
+             <Message Id="System.String.StartsWith(System.String)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'string.StartsWith(string)'</Item>
+               <Item>'MainWindow.ReformatPipeTable(List&lt;string&gt;, int)'</Item>
+               <Item>'string.StartsWith(string, StringComparison)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#RemoveWikiJunk(System.String)">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2012-01-01 05:35:47Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>'MainWindow.RemoveWikiJunk(string)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#SaveFile(System.Object,System.Windows.RoutedEventArgs)">
+            <Messages>
+             <Message TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820" Created="2012-01-01 05:35:47Z">
+              <Issue Name="IsNullOrEmpty">
+               <Item>'string.operator ==(string, string)'</Item>
+               <Item>'MainWindow.SaveFile(object, RoutedEventArgs)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#SaveFile(System.String,ICSharpCode.AvalonEdit.TextEditor)">
+            <Messages>
+             <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Created="2012-01-01 05:35:47Z" FixCategory="NonBreaking">
+              <Issue>
+               <Item>'MainWindow.SaveFile(string, TextEditor)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#SelectMru(System.Object,System.Windows.Input.ExecutedRoutedEventArgs)">
+            <Messages>
+             <Message Id="System.Convert.ToInt32(System.String)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2012-01-01 05:35:47Z">
+              <Issue Name="IFormatProviderAlternate">
+               <Item>'Convert.ToInt32(string)'</Item>
+               <Item>'MainWindow.SelectMru(object, ExecutedRoutedEventArgs)'</Item>
+               <Item>'Convert.ToInt32(string, IFormatProvider)'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#SelectMRU1(System.Object,System.Windows.RoutedEventArgs)">
+            <Messages>
+             <Message Id="System.String.IndexOf(System.String)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'string.IndexOf(string)'</Item>
+               <Item>'MainWindow.SelectMRU1(object, RoutedEventArgs)'</Item>
+               <Item>'string.IndexOf(string, StringComparison)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#SelectMRU2(System.Object,System.Windows.RoutedEventArgs)">
+            <Messages>
+             <Message Id="System.String.IndexOf(System.String)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'string.IndexOf(string)'</Item>
+               <Item>'MainWindow.SelectMRU2(object, RoutedEventArgs)'</Item>
+               <Item>'string.IndexOf(string, StringComparison)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#SelectMRU3(System.Object,System.Windows.RoutedEventArgs)">
+            <Messages>
+             <Message Id="System.String.IndexOf(System.String)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'string.IndexOf(string)'</Item>
+               <Item>'MainWindow.SelectMRU3(object, RoutedEventArgs)'</Item>
+               <Item>'string.IndexOf(string, StringComparison)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#SelectMRU4(System.Object,System.Windows.RoutedEventArgs)">
+            <Messages>
+             <Message Id="System.String.IndexOf(System.String)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'string.IndexOf(string)'</Item>
+               <Item>'MainWindow.SelectMRU4(object, RoutedEventArgs)'</Item>
+               <Item>'string.IndexOf(string, StringComparison)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#statusBar">
+            <Messages>
+             <Message TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'MainWindow.statusBar'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#System.Windows.Markup.IComponentConnector.Connect(System.Int32,System.Object)">
+            <Messages>
+             <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Created="2012-01-01 05:35:47Z">
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'CommandBinding'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'CommandBinding'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'CommandBinding'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'CommandBinding'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'CommandBinding'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'CommandBinding'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'CommandBinding'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'CommandBinding'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'CommandBinding'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'CommandBinding'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'CommandBinding'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'CommandBinding'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'CommandBinding'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'CommandBinding'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'CommandBinding'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'CommandBinding'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'CommandBinding'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'CommandBinding'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'CommandBinding'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'CommandBinding'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'CommandBinding'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'CommandBinding'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'CommandBinding'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'CommandBinding'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'CommandBinding'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'CommandBinding'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'CommandBinding'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'CommandBinding'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'MainWindow'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'MainWindow'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'MenuItem'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'MenuItem'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'MenuItem'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'MenuItem'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'MenuItem'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'MenuItem'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'MenuItem'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'MenuItem'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'MenuItem'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'MenuItem'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'MenuItem'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'MenuItem'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'MenuItem'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'MenuItem'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'MenuItem'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'MenuItem'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'MenuItem'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'MenuItem'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'MenuItem'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'MenuItem'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'MenuItem'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'MenuItem'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'Separator'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'Separator'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'Separator'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'Separator'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+              <Issue Name="Parameter">
+               <Item>'target'</Item>
+               <Item>'Separator'</Item>
+               <Item>'MainWindow.IComponentConnector.Connect(int, object)'</Item>
+               <Item>castclass</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'MainWindow'</Item>
+               <Item>'IComponentConnector.Connect(int, object)'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="PicklerCommand">
+          <Messages>
+           <Message Id="Pickler" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2012-01-01 05:35:47Z">
+            <Issue Name="Type">
+             <Item>Pickler</Item>
+             <Item>'PicklerCommand'</Item>
+            </Issue>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="#About">
+            <Messages>
+             <Message TypeName="DoNotDeclareReadOnlyMutableReferenceTypes" Category="Microsoft.Security" CheckId="CA2104" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'PicklerCommand.About'</Item>
+               <Item>'RoutedUICommand'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ChangeFont">
+            <Messages>
+             <Message TypeName="DoNotDeclareReadOnlyMutableReferenceTypes" Category="Microsoft.Security" CheckId="CA2104" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'PicklerCommand.ChangeFont'</Item>
+               <Item>'RoutedUICommand'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#CloseAll">
+            <Messages>
+             <Message TypeName="DoNotDeclareReadOnlyMutableReferenceTypes" Category="Microsoft.Security" CheckId="CA2104" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'PicklerCommand.CloseAll'</Item>
+               <Item>'RoutedUICommand'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#CloseFile">
+            <Messages>
+             <Message TypeName="DoNotDeclareReadOnlyMutableReferenceTypes" Category="Microsoft.Security" CheckId="CA2104" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'PicklerCommand.CloseFile'</Item>
+               <Item>'RoutedUICommand'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#FoldAll">
+            <Messages>
+             <Message TypeName="DoNotDeclareReadOnlyMutableReferenceTypes" Category="Microsoft.Security" CheckId="CA2104" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'PicklerCommand.FoldAll'</Item>
+               <Item>'RoutedUICommand'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#OpenExistingFile">
+            <Messages>
+             <Message TypeName="DoNotDeclareReadOnlyMutableReferenceTypes" Category="Microsoft.Security" CheckId="CA2104" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'PicklerCommand.OpenExistingFile'</Item>
+               <Item>'RoutedUICommand'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#OpenNewFile">
+            <Messages>
+             <Message TypeName="DoNotDeclareReadOnlyMutableReferenceTypes" Category="Microsoft.Security" CheckId="CA2104" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'PicklerCommand.OpenNewFile'</Item>
+               <Item>'RoutedUICommand'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ReformatAll">
+            <Messages>
+             <Message TypeName="DoNotDeclareReadOnlyMutableReferenceTypes" Category="Microsoft.Security" CheckId="CA2104" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'PicklerCommand.ReformatAll'</Item>
+               <Item>'RoutedUICommand'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ReformatOpenFile">
+            <Messages>
+             <Message TypeName="DoNotDeclareReadOnlyMutableReferenceTypes" Category="Microsoft.Security" CheckId="CA2104" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'PicklerCommand.ReformatOpenFile'</Item>
+               <Item>'RoutedUICommand'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#SaveAll">
+            <Messages>
+             <Message TypeName="DoNotDeclareReadOnlyMutableReferenceTypes" Category="Microsoft.Security" CheckId="CA2104" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'PicklerCommand.SaveAll'</Item>
+               <Item>'RoutedUICommand'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#SaveAs">
+            <Messages>
+             <Message TypeName="DoNotDeclareReadOnlyMutableReferenceTypes" Category="Microsoft.Security" CheckId="CA2104" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'PicklerCommand.SaveAs'</Item>
+               <Item>'RoutedUICommand'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#SaveOpenFile">
+            <Messages>
+             <Message TypeName="DoNotDeclareReadOnlyMutableReferenceTypes" Category="Microsoft.Security" CheckId="CA2104" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'PicklerCommand.SaveOpenFile'</Item>
+               <Item>'RoutedUICommand'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#SelectMru">
+            <Messages>
+             <Message TypeName="DoNotDeclareReadOnlyMutableReferenceTypes" Category="Microsoft.Security" CheckId="CA2104" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'PicklerCommand.SelectMru'</Item>
+               <Item>'RoutedUICommand'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ToggleWhitespace">
+            <Messages>
+             <Message Id="Whitespace" TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702" Created="2012-01-01 05:35:47Z">
+              <Issue Name="MemberShouldBeCompoundWord">
+               <Item>Whitespace</Item>
+               <Item>'PicklerCommand.ToggleWhitespace'</Item>
+               <Item>WhiteSpace</Item>
+              </Issue>
+             </Message>
+             <Message TypeName="DoNotDeclareReadOnlyMutableReferenceTypes" Category="Microsoft.Security" CheckId="CA2104" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'PicklerCommand.ToggleWhitespace'</Item>
+               <Item>'RoutedUICommand'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#ToggleWordWrap">
+            <Messages>
+             <Message TypeName="DoNotDeclareReadOnlyMutableReferenceTypes" Category="Microsoft.Security" CheckId="CA2104" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'PicklerCommand.ToggleWordWrap'</Item>
+               <Item>'RoutedUICommand'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#UnfoldAll">
+            <Messages>
+             <Message TypeName="DoNotDeclareReadOnlyMutableReferenceTypes" Category="Microsoft.Security" CheckId="CA2104" Created="2012-01-01 05:35:47Z">
+              <Issue>
+               <Item>'PicklerCommand.UnfoldAll'</Item>
+               <Item>'RoutedUICommand'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Tags">
+          <Members>
+           <Member Name="#Backcolor">
+            <Messages>
+             <Message Id="Backcolor" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Created="2012-01-01 05:35:47Z">
+              <Issue Name="Member">
+               <Item>Backcolor</Item>
+               <Item>'Tags.Backcolor'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="#Syntaxfile">
+            <Messages>
+             <Message Id="Syntaxfile" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2011-09-28 06:01:22Z">
+              <Issue Name="Member">
+               <Item>Syntaxfile</Item>
+               <Item>'Tags.Syntaxfile'</Item>
+              </Issue>
+              <Notes>
+               <User Name="TimDaniels">
+                <Note Id="0" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="System.Fonts">
+        <Types>
+         <Type Name="FontTranslate">
+          <Members>
+           <Member Name="#FillFont()">
+            <Messages>
+             <Message Id="System.Convert.ToInt32(System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Created="2012-01-01 05:35:47Z">
+              <Issue Name="IFormatProviderAlternate">
+               <Item>'Convert.ToInt32(object)'</Item>
+               <Item>'FontTranslate.FillFont()'</Item>
+               <Item>'Convert.ToInt32(object, IFormatProvider)'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+              <Issue Name="IFormatProviderAlternate">
+               <Item>'Convert.ToInt32(object)'</Item>
+               <Item>'FontTranslate.FillFont()'</Item>
+               <Item>'Convert.ToInt32(object, IFormatProvider)'</Item>
+               <Item>'CultureInfo.CurrentCulture'</Item>
+               <Item>'CultureInfo.InvariantCulture'</Item>
+              </Issue>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+  </Targets>
+  <Notes>
+   <User Name="TimDaniels">
+    <Note Id="0" Modified="2011-09-29 05:55:39Z">OK</Note>
+    <Note Id="1" Modified="2011-09-29 05:55:48Z">Ok</Note>
+    <Note Id="2" Modified="2011-09-29 05:55:56Z">OK</Note>
+    <Note Id="4" Modified="2011-09-29 05:56:24Z">OK</Note>
+   </User>
+   <User Name="Tims iPod">
+    <Note Id="0" Modified="2011-09-21 06:08:17Z">OkayToIgnore</Note>
+    <Note Id="1" Modified="2011-09-21 06:08:35Z">No Strong Key Needed - Open Source</Note>
+    <Note Id="2" Modified="2011-09-21 06:08:53Z">OK</Note>
+    <Note Id="3" Modified="2011-09-21 06:08:58Z">OK</Note>
+    <Note Id="4" Modified="2011-09-21 06:09:08Z">OK</Note>
+    <Note Id="7" Modified="2011-09-21 06:16:15Z">OK</Note>
+    <Note Id="8" Modified="2011-09-21 06:16:27Z">OK</Note>
+    <Note Id="10" Modified="2011-09-21 06:16:54Z">OK</Note>
+    <Note Id="11" Modified="2011-09-21 06:17:18Z">OK</Note>
+   </User>
+  </Notes>
+  <Rules>
+   <Rule TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210">
+    <Resolution Name="NoStrongName">Sign {0} with a strong name key.</Resolution>
+   </Rule>
+   <Rule TypeName="AvoidUnusedPrivateFields" Category="Microsoft.Performance" CheckId="CA1823">
+    <Resolution Name="Default">It appears that field {0} is never used or is only ever assigned to. Use this field or remove it.</Resolution>
+   </Rule>
+   <Rule TypeName="CompoundWordsShouldBeCasedCorrectly" Category="Microsoft.Naming" CheckId="CA1702">
+    <Resolution Name="MemberShouldBeCompoundWord">The discrete term '{0}' in member name {1} should be expressed as a compound word, '{2}'.</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800">
+    <Resolution Name="Parameter">{0}, a parameter, is cast to type {1} multiple times in method {2}. Cache the result of the 'as' operator or direct cast in order to eliminate the redundant {3} instruction.</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031">
+    <Resolution Name="Default">Modify {0} to catch a more specific exception than {1} or rethrow the exception.</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotDeclareReadOnlyMutableReferenceTypes" Category="Microsoft.Security" CheckId="CA2104">
+    <Resolution Name="Default">Remove the read-only designation from {0} or change the field to one that is an immutable reference type. If the reference type {1} is, in fact, immutable, exclude this message.</Resolution>
+   </Rule>
+   <Rule TypeName="DoNotExposeGenericLists" Category="Microsoft.Design" CheckId="CA1002">
+    <Resolution Name="Default">Change {0} in {1} to use Collection&lt;T&gt;, ReadOnlyCollection&lt;T&gt; or KeyedCollection&lt;K,V&gt;</Resolution>
+   </Rule>
+   <Rule TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704">
+    <Resolution Name="Assembly">Correct the spelling of '{0}' in assembly name {1}.</Resolution>
+    <Resolution Name="Member">Correct the spelling of '{0}' in member name {1} or remove it entirely if it represents any sort of Hungarian notation.</Resolution>
+    <Resolution Name="Namespace">Correct the spelling of '{0}' in namespace name '{1}'.</Resolution>
+    <Resolution Name="Type">Correct the spelling of '{0}' in type name {1}.</Resolution>
+   </Rule>
+   <Rule TypeName="InterfaceMethodsShouldBeCallableByChildTypes" Category="Microsoft.Design" CheckId="CA1033">
+    <Resolution Name="Default">Make {0} sealed (a breaking change if this class has previously shipped), implement the method non-explicitly, or implement a new method that exposes the functionality of {1} and is visible to derived classes.</Resolution>
+   </Rule>
+   <Rule TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014">
+    <Resolution Name="Default">Mark {0} with CLSCompliant(true) because it exposes externally visible types.</Resolution>
+   </Rule>
+   <Rule TypeName="MarkAssembliesWithComVisible" Category="Microsoft.Design" CheckId="CA1017">
+    <Resolution Name="NoAttribute">Because {0} exposes externally visible types, mark it with ComVisible(false) at the assembly level and then mark all types within the assembly that should be exposed to COM clients with ComVisible(true).</Resolution>
+   </Rule>
+   <Rule TypeName="MarkAssembliesWithNeutralResourcesLanguage" Category="Microsoft.Performance" CheckId="CA1824">
+    <Resolution Name="Default">Because assembly {0} contains a ResX-based resource file, mark it with the NeutralResourcesLanguage attribute, specifying the language of the resources within the assembly. This could improve lookup performance the first time a resource is retrieved.</Resolution>
+   </Rule>
+   <Rule TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822">
+    <Resolution Name="Default">The 'this' parameter (or 'Me' in Visual Basic) of {0} is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Resolution>
+   </Rule>
+   <Rule TypeName="NonConstantFieldsShouldNotBeVisible" Category="Microsoft.Usage" CheckId="CA2211">
+    <Resolution Name="Default">Consider making {0} non-public or a constant.</Resolution>
+   </Rule>
+   <Rule TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819">
+    <Resolution Name="Default">Change {0} to return a collection or make it a method.</Resolution>
+   </Rule>
+   <Rule TypeName="RemoveUnusedLocals" Category="Microsoft.Performance" CheckId="CA1804">
+    <Resolution Name="Default">{0} declares a variable, {1}, of type {2}, which is never used or is only assigned to. Use this variable or remove it.</Resolution>
+   </Rule>
+   <Rule TypeName="ReviewUnusedParameters" Category="Microsoft.Usage" CheckId="CA1801">
+    <Resolution Name="Default">Parameter {0} of {1} is never used. Remove the parameter or use it in the method body.</Resolution>
+   </Rule>
+   <Rule TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305">
+    <Resolution Name="IFormatProviderAlternate">Because the behavior of {0} could vary based on the current user's locale settings, replace this call in {1} with a call to {2}. If the result of {2} will be based on input from the user, specify {3} as the 'IFormatProvider' parameter. Otherwise, if the result will based on input stored and accessed by software, such as when it is loaded from disk or from a database, specify {4}.</Resolution>
+    <Resolution Name="IFormatProviderAlternateString">Because the behavior of {0} could vary based on the current user's locale settings, replace this call in {1} with a call to {2}. If the result of {2} will be displayed to the user, specify {3} as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify {4}.</Resolution>
+   </Rule>
+   <Rule TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307">
+    <Resolution Name="Default">Because the behavior of {0} could vary based on the current user's locale settings, replace this call in {1} with a call to {2}. If the result of {2} will be displayed to the user, such as when sorting a list of items for display in a list box, specify 'StringComparison.CurrentCulture' or 'StringComparison.CurrentCultureIgnoreCase' as the 'StringComparison' parameter. If comparing case-insensitive identifiers, such as file paths, environment variables, or registry keys and values, specify 'StringComparison.OrdinalIgnoreCase'. Otherwise, if comparing case-sensitive identifiers, specify 'StringComparison.Ordinal'.</Resolution>
+   </Rule>
+   <Rule TypeName="StaticHolderTypesShouldNotHaveConstructors" Category="Microsoft.Design" CheckId="CA1053">
+    <Resolution Name="CSharp2_0">Because type {0} contains only 'static' members, mark it as 'static' to prevent the compiler from adding a default public constructor.</Resolution>
+    <Resolution Name="Default">Because type {0} contains only 'static' ('Shared' in Visual Basic) members, add a default private constructor to prevent the compiler from adding a default public constructor.</Resolution>
+   </Rule>
+   <Rule TypeName="TestForEmptyStringsUsingStringLength" Category="Microsoft.Performance" CheckId="CA1820">
+    <Resolution Name="IsNullOrEmpty">Replace the call to {0} in {1} with a call to 'String.IsNullOrEmpty'.</Resolution>
+   </Rule>
+  </Rules>
+ </FxCopReport>
+</FxCopProject>

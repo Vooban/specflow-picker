@@ -1,0 +1,6 @@
+.Net GUI Development -------------------- 
+	Tim Daniels, Lead Developer: StrikeByte Software 
+	Joseph Hicks, Developer of Refactoring Code, ITAGroup, Inc. 
+.Net Components --------------- 
+	SyntaxBox is now open source (LGPL). Download at http://code.google.com/p/alsing/.
+	Scintilla.NET is open source (). Download at http://scintillanet.codeplex.com/.

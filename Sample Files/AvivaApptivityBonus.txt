@@ -1,0 +1,87 @@
+#TIM DANIELS
+@BonusFileImport
+Feature: Import Bonus File
+In order to Import a Bonus file
+As an SA
+I want to be able to Import a  the Bonus amounts for each participant.
+
+@Transactional
+Scenario: New Bonus record should be added to the database
+Given Bonus Import CPN is 'U123456'
+And Bonus Import Description is 'April - ADT Blue'
+And Bonus Import Award Amount is '500'
+And Bonus Import Award Date is '07/29/2011'
+And Bonus Import GoalPeriodID is '60'
+When I import the New Bonus file and save the data
+Given I have the newly saved Bonus record to review
+Then the Bonus record CPN should be 'U123456'
+And Bonus record Description should be 'April - ADT Blue'
+And Bonus record Award Amount should be '500'
+And Bonus record Award Date should be '07/29/2011'
+And Bonus record GoalPeriodID should be '60'
+
+@Transactional
+Scenario Outline: Validate CPN
+Given Bonus Import CPN is '<CPN>'
+When I import the New Bonus file and save the data
+Then Message after Bonus data save should be '<Message>'
+Examples:
+| Notes         | CPN      | Message                                        |
+| Valid CPN = 7 | U118900  |                                                |
+| CPN = 8       | 11890999 | Error: The CPN field must be 7 characters long |
+| CPN = 5       | C11890   | Error: The CPN field must be 7 characters long |
+| CPN = blank   |          | Error: The CPN field must be 7 characters long |
+
+@Transactional
+Scenario Outline: Validate imported Description
+Given Bonus Import Description is '<Description>'
+When I import the New Bonus file and save the data
+Then Message after Bonus data save should be '<OutputMessage>'
+Examples:
+| Notes | Description      | OutputMessage              |
+|       | April - ADT Blue |                            |
+|       |                  | Error: Invalid Description |
+
+@Transactional
+Scenario Outline: Validate Award Amount is numeric
+Given Bonus Import Award Amount is '<Award Amount>'
+When I import the New Bonus file and save the data
+Then Message after Bonus data save should be '<OutputMessage>'
+Examples:
+| Award Amount | OutputMessage               |
+| -12          |                             |
+| 0            |                             |
+| 9            |                             |
+| $52          | Error: Invalid Award Amount |
+|              | Error: Invalid Award Amount |
+| ABC          | Error: Invalid Award Amount |
+
+Scenario Outline: Verify Award Date = 10 characters and in mm/dd/yyyy format
+Given Bonus Import Award Date is '<Award Date>'
+When I import the New Bonus file and save the data
+Then Message after Bonus data save should be '<Message>'
+And Message Award Date should be '<Result>'
+Examples:
+| Award Date  | Result     | Message                   |
+| 11/30/2012  | 11/30/2012 |                           |
+| 11-30-2012  | 11/30/2012 |                           |
+| 11/30/20121 |            | Error: Invalid Award Date |
+| 11302012    | 11/30/2012 |                           |
+| 12.02.2012  | 12/02/2012 |                           |
+|             |            | Error: Invalid Award Date |
+| abc         | abc        | Error: Invalid Award Date |
+
+@Transactional
+Scenario Outline: Validate GoalPeriodID is numeric
+Given Bonus Import GoalPeriodID is '<GoalPeriodID>'
+When I import the New Bonus file and save the data
+Then Message after Bonus data save should be '<OutputMessage>'
+
+Examples:
+| GoalPeriodID | OutputMessage               |
+| 60           |                             |
+| $52          | Error: Invalid GoalPeriodID |
+|              | Error: Invalid GoalPeriodID |
+| ABC          | Error: Invalid GoalPeriodID |
+
+

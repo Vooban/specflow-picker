@@ -1,0 +1,55 @@
+Pickler - Release Notes
+Copyright © 2011-, StrikeByte Software.
+
+*******************************************************************************
+Release 2.1.0
+*******************************************************************************
+-- Fixed crash on Folding Manager.
+-- Fixed issue with Save/Save As throwing errors.
+-- Fixed issue with save always adding blank lines to end of the file.
+-- Fixed code folding issue.
+
+
+*******************************************************************************
+Release 2.0.0
+*******************************************************************************
+-- Replaced ScintillaNet with Avalon Componets
+-- Updated table refactorng with on typ updates.
+-- Converted Project to WPF
+
+*******************************************************************************
+Release 1.2.0
+*******************************************************************************
+-- Replaced SyntaxBox with ScintillaNet components
+-- Implemented Code Folding.
+
+*******************************************************************************
+Release 1.1.0
+*******************************************************************************
+-- Added Multiple document support.
+-- Added Drag and Drop Capabilities for feature files.
+-- Cleaned up StyleCop and FXCop Violations.
+-- Finish Refactoring to include a blank line after all tables.
+
+
+*******************************************************************************
+Release 1.0.2
+*******************************************************************************
+-- Fix Save
+-- Update Insatll to include dark and light syn files.
+-- Fix focus issue on startup.
+-- Update credits to include Joe.
+-- Allow for no document to be displayed.
+-- Fix reformatter issues with tabs.
+-- Allow user to change font.
+
+
+*******************************************************************************
+Release 1.0.1
+*******************************************************************************
+-- Couple of Bug Fixes
+
+*******************************************************************************
+Release 1.0.0
+*******************************************************************************
+-- Initial Release

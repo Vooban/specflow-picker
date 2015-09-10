@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<SyntaxDefinition name="Gherkin" extensions=".feature" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+
+    <Color name="Comment" foreground="Green" />
+    <Color name="DataTable" foreground="Purple" /> 
+    <Color name="Directive" foreground="DarkBlue" />
+    <Color name="Placeholder" foreground="Black" />
+    <Color name="String" foreground="Black" />
+
+    <Color name="Function" foreground="Orange" fontWeight="bold" />
+    <Color name="Reserved" foreground="Red" fontWeight="bold" />
+    
+    <RuleSet>
+
+        <Span color="Comment" begin="^#" end="$" />
+        <Span color="DataTable" begin="^\|" end="$" />
+        <Span color="Directive" begin="^@" end="$" />
+        <Span color="Placeholder">
+            <Begin>&lt;</Begin>
+            <End>&gt;</End>
+        </Span> 
+        <Span color="String">
+            <Begin>"</Begin>
+            <End>"</End>
+        </Span>
+        <Span color="String">
+            <Begin>'</Begin>
+            <End>'</End>
+        </Span>
+        
+        <Keywords color="Function">
+            <Word>language:</Word>
+            <Word>Background:</Word>
+            <Word>Examples:</Word>
+            <Word>Feature:</Word>
+            <Word>Scenario:</Word>
+            <Word>Scenario Outline:</Word>
+        </Keywords>
+        <Keywords color="Reserved">
+            <Word>And</Word>
+            <Word>As an</Word>
+            <Word>But</Word>
+            <Word>Given</Word>
+            <Word>I want</Word>
+            <Word>In order to</Word>
+            <Word>Then</Word>
+            <Word>Transform</Word>
+            <Word>When</Word>
+        </Keywords>
+    </RuleSet>
+</SyntaxDefinition>
