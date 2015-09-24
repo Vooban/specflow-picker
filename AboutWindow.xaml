@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="AboutWindow" WindowStyle="None" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Height="453" Width="443" AllowsTransparency="True" Loaded="Window_Loaded" KeyDown="Window_KeyDown" MouseUp="Window_MouseUp">
     <Window.Background>
-        <ImageBrush ImageSource="/Pickler;component/images/PicklerAbout.png" />
+        <ImageBrush ImageSource="images/PicklerAbout.png" />
     </Window.Background>
     <Grid>
         <Label Content="PICKLER" Name="ProgramName" Margin="81,137,76,225" FontWeight="Bold" FontSize="32" UseLayoutRounding="True" VerticalAlignment="Center" HorizontalAlignment="Center" Width="264" />

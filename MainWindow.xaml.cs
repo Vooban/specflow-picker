@@ -109,10 +109,15 @@ namespace Pickler
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private void Edit_TextChanged(object sender, EventArgs e)
         {
-            TextEditor editor = (TextEditor)((TabItem)tabCntl.Items[tabCntl.SelectedIndex]).Content;
+            //var tabItem = ((TabItem) tabCntl.Items[tabCntl.SelectedIndex]);
+            var editor = (TextEditor)sender;
+            var tabItem = (TabItem)editor.Parent;
+
             if (editor.Text.Length > 0)
             {
+                editor.Tag = true;
                 mSave.IsEnabled = true;
+                tabItem.Header = string.Format("{0}*", tabItem.Header.ToString().Replace("*", ""));
                 this.ApplySyntax(editor);
             }
         }
@@ -486,6 +491,7 @@ namespace Pickler
                     tabCntl.Visibility = System.Windows.Visibility.Visible;
 
                     var newEditor = new TextEditor { Visibility = System.Windows.Visibility.Visible };
+                    newEditor.Tag = false;
                     newEditor.HorizontalScrollBarVisibility = ScrollBarVisibility.Visible;
                     newEditor.VerticalScrollBarVisibility = ScrollBarVisibility.Visible;
                     newEditor.ShowLineNumbers = true;
@@ -494,8 +500,11 @@ namespace Pickler
 
                     if (!newFile)
                     {
-                        var featureStream = new StreamReader(fileName);
-                        newEditor.Text = featureStream.ReadToEnd();
+                        using (var featureStream = new StreamReader(fileName))
+                        {
+                            newEditor.Text = featureStream.ReadToEnd();
+                        }
+
                         this.ReformatFile(newEditor);
                     }
 
@@ -939,18 +948,6 @@ namespace Pickler
         }
 
         /// <summary>
-        /// Saves all editors.
-        /// </summary>
-        private void SaveAllEditors()
-        {
-            foreach (TabItem ti in tabCntl.Items)
-            {
-                var editor = (TextEditor)ti.Content;
-                this.SaveFile(ti.ToolTip.ToString(), editor);
-            }
-        }
-
-        /// <summary>
         /// Saves the config.
         /// </summary>
         private void SaveConfig()
@@ -958,22 +955,6 @@ namespace Pickler
             this.Cursor = Cursors.Wait;
             this.configuationSettings.Save();
             this.Cursor = null;
-        }
-
-        /// <summary>
-        /// Saves the file.
-        /// </summary>
-        /// <param name="filePath">The file path.</param>
-        /// <param name="editor">The editor.</param>
-        private void SaveFile(string filePath, TextEditor editor)
-        {
-            TextWriter tw = new StreamWriter(filePath, false);
-            foreach (DocumentLine item in editor.Document.Lines)
-            {
-                tw.WriteLine(editor.Text.Substring(item.Offset, item.Length));
-            }
-
-            tw.Close();
         }
 
         /// <summary>
@@ -1048,7 +1029,6 @@ namespace Pickler
         private void CreateNewFile(object sender, RoutedEventArgs e)
         {
             this.LoadFileView(string.Empty);
-            mSave.IsEnabled = true;
         }
 
         /// <summary>
@@ -1080,8 +1060,46 @@ namespace Pickler
 
                 this.MoveMruNode(ofd.FileName);
                 this.ApplyMruSettings();
+            }            
+        }
+
+        /// <summary>
+        /// Saves all editors.
+        /// </summary>
+        private void SaveAllEditors()
+        {
+            foreach (TabItem ti in tabCntl.Items)
+            {
+                SaveFile(ti);
             }
-            mSave.IsEnabled = true;
+        }
+
+        private string SaveFile(TabItem filePage)
+        {
+            var fileEditor = (TextEditor)filePage.Content;
+            var fileName = filePage.ToolTip.ToString();
+
+            this.ReformatFile(fileEditor);
+            this.ApplySyntax(fileEditor);
+            this.ApplyFolding(fileEditor);
+            if (string.IsNullOrEmpty(fileName) || fileName == "Unnamed")
+            {
+                var sfd = new SaveFileDialog();
+                if (sfd.ShowDialog() == true)
+                {
+                    fileName = sfd.FileName;
+                    filePage.ToolTip = fileName;
+                }
+                else
+                    return fileName;
+            }
+            
+            filePage.Header = Path.GetFileName(fileName);
+            fileEditor.Tag = false;
+
+            this.SaveFile(fileName, fileEditor);
+
+            return fileName;
         }
 
         /// <summary>
@@ -1092,24 +1110,28 @@ namespace Pickler
         private void SaveFile(object sender, RoutedEventArgs e)
         {
             var filePage = (TabItem)tabCntl.SelectedItem;
-            var fileEditor = (TextEditor)filePage.Content;
 
-            this.ReformatFile(fileEditor);
-            this.ApplySyntax(fileEditor);
-            this.ApplyFolding(fileEditor);
-            if (this.currentFileName == string.Empty)
+            this.currentFileName = SaveFile(filePage);
+            this.MoveMruNode(this.currentFileName);
+
+            ((TextEditor)filePage.Content).Tag = false;
+            mSave.IsEnabled = false;
+        }
+
+        /// <summary>
+        /// Saves the file.
+        /// </summary>
+        /// <param name="filePath">The file path.</param>
+        /// <param name="editor">The editor.</param>
+        private void SaveFile(string filePath, TextEditor editor)
+        {
+            TextWriter tw = new StreamWriter(filePath, false);
+            foreach (DocumentLine item in editor.Document.Lines)
             {
-                var sfd = new SaveFileDialog();
-                if (sfd.ShowDialog() == true)
-                {
-                    this.currentFileName = sfd.FileName;
-                    filePage.Header = this.currentFileName;
-                    this.MoveMruNode(this.currentFileName);
-                }
+                tw.WriteLine(editor.Text.Substring(item.Offset, item.Length));
             }
 
-            this.SaveFile(this.currentFileName, fileEditor);
-            mSave.IsEnabled = false;
+            tw.Close();
         }
 
         /// <summary>
@@ -1125,6 +1147,7 @@ namespace Pickler
             this.ApplySyntax(fileEditor);
             this.ApplyFolding(fileEditor);
             this.SaveFileAs();
+            fileEditor.Tag = false;
             mSave.IsEnabled = false;
         }
 
@@ -1135,9 +1158,9 @@ namespace Pickler
         /// <param name="e">The <see cref="System.Windows.RoutedEventArgs"/> instance containing the event data.</param>
         private void SaveAllFiles(object sender, RoutedEventArgs e)
         {
-            var holdSelected = (TabItem)tabCntl.SelectedItem;
+            var holdSelected = tabCntl.SelectedIndex;
             this.SaveAllEditors();
-            tabCntl.SelectedItem = holdSelected;
+            tabCntl.SelectedIndex = holdSelected;
         }
 
         /// <summary>
@@ -1681,6 +1704,12 @@ namespace Pickler
         }
 
         #endregion
+
+        private void tabCntl_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var editor = (TextEditor)((TabItem)tabCntl.Items[tabCntl.SelectedIndex]).Content;
+            mSave.IsEnabled = editor!= null && editor.Tag != null && (bool) editor.Tag;
+        }
 
 
     }
