@@ -51,7 +51,7 @@
   <ItemGroup>
     <Reference Include="ICSharpCode.AvalonEdit, Version=0.0.0.0, Culture=neutral, PublicKeyToken=9cc39be672370310, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>components\ICSharpCode.AvalonEdit.dll</HintPath>
+      <HintPath>packages\AvalonEdit.5.0.2\lib\Net40\ICSharpCode.AvalonEdit.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -148,6 +148,7 @@
     </Content>
     <Content Include="deploy\Pickler.iss" />
     <Content Include="deploy\UninsHs.exe" />
+    <None Include="packages.config" />
     <None Include="Pickler.snk" />
     <None Include="precinct\Settings.StyleCop" />
     <Resource Include="documents\Credits.txt" />

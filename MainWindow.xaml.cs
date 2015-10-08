@@ -4,6 +4,7 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
+using System.Windows.Media;
 using System.Windows.Shapes;
 
 namespace Pickler
@@ -491,10 +492,19 @@ namespace Pickler
                     tabCntl.Visibility = System.Windows.Visibility.Visible;
 
                     var newEditor = new TextEditor { Visibility = System.Windows.Visibility.Visible };
+                    newEditor.Options.ShowSpaces = false;
+                    newEditor.Options.ShowTabs = false;
+                    newEditor.Options.CutCopyWholeLine = true;
+                    newEditor.Options.ConvertTabsToSpaces = true;
+                    newEditor.Options.EnableHyperlinks = false;
+                    newEditor.Options.EnableEmailHyperlinks = false;
+                    newEditor.Options.EnableTextDragDrop = false;
+                    newEditor.Options.EnableRectangularSelection = true;
+                    newEditor.ShowLineNumbers = true;
+
                     newEditor.Tag = false;
                     newEditor.HorizontalScrollBarVisibility = ScrollBarVisibility.Visible;
                     newEditor.VerticalScrollBarVisibility = ScrollBarVisibility.Visible;
-                    newEditor.ShowLineNumbers = true;
                     this.LoadEditorConfig(newEditor);
                     this.ApplySyntax(newEditor);
 
@@ -1354,11 +1364,10 @@ namespace Pickler
         private void ToggleSpace(object sender, RoutedEventArgs e)
         {
             var currentTab = (TabItem)tabCntl.SelectedItem;
-            var currentEditor = (TextEditor)currentTab.Content;
+            var currentEditor = (TextEditor)currentTab.Content;            
             currentEditor.TextArea.Options.ShowTabs = !currentEditor.TextArea.Options.ShowTabs;
             currentEditor.TextArea.Options.ShowSpaces = !currentEditor.TextArea.Options.ShowSpaces;
-            currentEditor.TextArea.Options.ShowBoxForControlCharacters =
-                !currentEditor.TextArea.Options.ShowBoxForControlCharacters;
+            currentEditor.TextArea.Options.ShowBoxForControlCharacters = !currentEditor.TextArea.Options.ShowBoxForControlCharacters;
         }
 
         /// <summary>

@@ -23,7 +23,7 @@ namespace ICSharpCode.AvalonEdit.AddIn
         /// Delays the Resolve check so that it does not get called too often when user holds an arrow.
         /// </summary>
         DispatcherTimer delayMoveTimer;
-        const int delayMoveMs = 100;
+        const int delayMoveMs = 150;
 
         /// <summary>
         /// Delays the Find references (and highlight) after the caret stays at one point for a while.
@@ -163,20 +163,36 @@ namespace ICSharpCode.AvalonEdit.AddIn
 
         List<TextSegment> FindReferencesLocal()
         {
-            List<TextSegment> segs = new List<TextSegment>();
+            var segs = new List<TextSegment>();
             if (this.lastExpression.Trim().Length > 0)
             {
-                Regex rex = new Regex(Regex.Escape(this.lastExpression));
-
-                MatchCollection matchlist = rex.Matches(this.editor.Text);
-                foreach (Match m in matchlist)
+                if (this.lastExpression == this.editor.Text.Trim())
                 {
-                    TextSegment t = new TextSegment();
-                    t.StartOffset = m.Index;
-                    t.Length = m.Length;
-                    t.EndOffset = m.Index + m.Length;
+                    var t = new TextSegment
+                    {
+                        StartOffset = 0,
+                        Length = this.lastExpression.Length,
+                        EndOffset = 0 + this.lastExpression.Length
+                    };
                     segs.Add(t);
                 }
+                else
+                {
+                    var rex = new Regex(Regex.Escape(this.lastExpression));
+
+                    var matchlist = rex.Matches(this.editor.Text);
+                    foreach (Match m in matchlist)
+                    {
+                        var t = new TextSegment
+                        {
+                            StartOffset = m.Index,
+                            Length = m.Length,
+                            EndOffset = m.Index + m.Length
+                        };
+                        segs.Add(t);
+                    } 
+                }
+         
             }
 
             return segs;
