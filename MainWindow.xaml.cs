@@ -6,6 +6,7 @@
 
 using System.Windows.Media;
 using System.Windows.Shapes;
+using FindReplace;
 
 namespace Pickler
 {
@@ -36,6 +37,9 @@ namespace Pickler
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        private FindReplaceMgr _findReplaceManager = new FindReplaceMgr();
+
         /// <summary>
         /// Local Working Variable
         /// </summary>
@@ -67,6 +71,8 @@ namespace Pickler
         public MainWindow()
         {
             InitializeComponent();
+            _findReplaceManager.ShowSearchIn = false;
+            _findReplaceManager.OwnerWindow = this;            
 
             string[] args = App.Parms;
 
@@ -282,10 +288,8 @@ namespace Pickler
             var startFold = -1;
             var endFold = -1;
             var folding = false;
-            var currentLine = 0;
             var folds = new List<NewFolding>();
             var titles = new List<string>();
-            var scenarioText = string.Empty;
             DocumentLine lastNonEmptyLine = editor.Document.Lines.FirstOrDefault();
             foreach (DocumentLine item in editor.Document.Lines)
             {
@@ -489,9 +493,8 @@ namespace Pickler
 
                     tabCntl.Items.Add(newTabPage);
                     tabCntl.SelectedItem = newTabPage;
-                    tabCntl.Visibility = System.Windows.Visibility.Visible;
 
-                    var newEditor = new TextEditor { Visibility = System.Windows.Visibility.Visible };
+                    var newEditor = new TextEditor {};
                     newEditor.Options.ShowSpaces = false;
                     newEditor.Options.ShowTabs = false;
                     newEditor.Options.CutCopyWholeLine = true;
@@ -525,7 +528,11 @@ namespace Pickler
                     newEditor.ContextMenu = this.CreateContextMenu();
                     newTabPage.Content = newEditor;
 
-                    CaretReferencesRenderer cfr = new CaretReferencesRenderer(newEditor);
+                    var cfr = new CaretReferencesRenderer(newEditor);
+
+                    _findReplaceManager.CurrentEditor = new TextEditorAdapter(newEditor);
+                    tabCntl.Visibility = System.Windows.Visibility.Visible;
+                    newEditor.Visibility = System.Windows.Visibility.Visible;
 
                     return true;
                 }
@@ -1608,6 +1615,18 @@ namespace Pickler
             e.Handled = true;
         }
 
+        private void CanFind(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = this.AnyFileOpen();
+            e.Handled = true;
+        }
+
+        private void CanReplace(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = this.AnyFileOpen();
+            e.Handled = true;
+        }
+
         /// <summary>
         /// Selects the font.
         /// </summary>
@@ -1616,6 +1635,16 @@ namespace Pickler
         private void SelectFont(object sender, ExecutedRoutedEventArgs e)
         {
             this.ChangeFont(sender, e);
+        }
+
+        private void Find(object sender, ExecutedRoutedEventArgs e)
+        {
+            _findReplaceManager.ShowAsFind();            
+        }
+
+        private void Replace(object sender, ExecutedRoutedEventArgs e)
+        {
+            _findReplaceManager.ShowAsReplace();                        
         }
 
         /// <summary>
@@ -1716,8 +1745,12 @@ namespace Pickler
 
         private void tabCntl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var editor = (TextEditor)((TabItem)tabCntl.Items[tabCntl.SelectedIndex]).Content;
+            var tab = (TabItem) tabCntl.Items[tabCntl.SelectedIndex];
+            var editor = (TextEditor)tab.Content;
             mSave.IsEnabled = editor!= null && editor.Tag != null && (bool) editor.Tag;
+
+            if (editor!=null)
+                _findReplaceManager.CurrentEditor = new TextEditorAdapter(editor);            
         }
 
 

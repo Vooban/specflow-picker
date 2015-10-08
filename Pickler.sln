@@ -4,16 +4,38 @@ VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pickler", "Pickler.csproj", "{F067753A-7E0B-4764-BAC1-20B325799B8A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindReplace", "FindReplace\FindReplace.csproj", "{F6237B7D-9A3B-4F55-961B-72035B0DEA4D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
 		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F067753A-7E0B-4764-BAC1-20B325799B8A}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{F067753A-7E0B-4764-BAC1-20B325799B8A}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{F067753A-7E0B-4764-BAC1-20B325799B8A}.Debug|Mixed Platforms.Build.0 = Debug|x86
 		{F067753A-7E0B-4764-BAC1-20B325799B8A}.Debug|x86.ActiveCfg = Debug|x86
 		{F067753A-7E0B-4764-BAC1-20B325799B8A}.Debug|x86.Build.0 = Debug|x86
+		{F067753A-7E0B-4764-BAC1-20B325799B8A}.Release|Any CPU.ActiveCfg = Release|x86
+		{F067753A-7E0B-4764-BAC1-20B325799B8A}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{F067753A-7E0B-4764-BAC1-20B325799B8A}.Release|Mixed Platforms.Build.0 = Release|x86
 		{F067753A-7E0B-4764-BAC1-20B325799B8A}.Release|x86.ActiveCfg = Release|x86
 		{F067753A-7E0B-4764-BAC1-20B325799B8A}.Release|x86.Build.0 = Release|x86
+		{F6237B7D-9A3B-4F55-961B-72035B0DEA4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6237B7D-9A3B-4F55-961B-72035B0DEA4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6237B7D-9A3B-4F55-961B-72035B0DEA4D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F6237B7D-9A3B-4F55-961B-72035B0DEA4D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F6237B7D-9A3B-4F55-961B-72035B0DEA4D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F6237B7D-9A3B-4F55-961B-72035B0DEA4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6237B7D-9A3B-4F55-961B-72035B0DEA4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6237B7D-9A3B-4F55-961B-72035B0DEA4D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F6237B7D-9A3B-4F55-961B-72035B0DEA4D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F6237B7D-9A3B-4F55-961B-72035B0DEA4D}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -88,6 +88,16 @@ namespace Pickler
         public static readonly RoutedUICommand ChangeFont = new RoutedUICommand("Change Font", "ChangeFont", typeof(MainWindow));
 
         /// <summary>
+        /// WPFCommand for Changing the font
+        /// </summary>
+        public static readonly RoutedUICommand Find = new RoutedUICommand("Find", "Find", typeof(MainWindow));
+
+        /// <summary>
+        /// WPFCommand for Changing the font
+        /// </summary>
+        public static readonly RoutedUICommand Replace = new RoutedUICommand("Replace", "Replace", typeof(MainWindow));
+
+        /// <summary>
         /// WPFCommand for About Windows
         /// </summary>
         public static readonly RoutedUICommand About = new RoutedUICommand("About", "About", typeof(MainWindow));

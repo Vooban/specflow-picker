@@ -18,6 +18,8 @@
         <CommandBinding Command="w:PicklerCommand.ToggleWhitespace" CanExecute="CanToggle"  Executed="ToggleWhitespace" />
         <CommandBinding Command="w:PicklerCommand.ToggleWordWrap" CanExecute="CanToggle"  Executed="ToggleWordWrap" />
         <CommandBinding Command="w:PicklerCommand.ChangeFont" CanExecute="CanSelectFont"  Executed="SelectFont" />
+        <CommandBinding Command="w:PicklerCommand.Find" CanExecute="CanFind" Executed="Find" />
+        <CommandBinding Command="w:PicklerCommand.Replace" CanExecute="CanReplace" Executed="Replace" />
         <CommandBinding Command="w:PicklerCommand.OpenNewFile" Executed="OpenNewFile" />
         <CommandBinding Command="w:PicklerCommand.OpenExistingFile" Executed="OpenExistingFile" />
         <CommandBinding Command="w:PicklerCommand.SelectMru" CanExecute="MRUVisible" Executed="SelectMru"  />
@@ -36,6 +38,8 @@
         <KeyBinding Command="w:PicklerCommand.ToggleWhitespace" Gesture="Ctrl+W" />
         <KeyBinding Command="w:PicklerCommand.ToggleWordWrap" Gesture="Ctrl+Shift+W" />
         <KeyBinding Command="w:PicklerCommand.ChangeFont" Gesture="F6" />
+        <KeyBinding Command="w:PicklerCommand.Find" Gesture="Ctrl+F" />
+        <KeyBinding Command="w:PicklerCommand.Replace" Gesture="Ctrl+H" />
         <KeyBinding Command="w:PicklerCommand.OpenNewFile" Gesture="Ctrl+N" />
         <KeyBinding Command="w:PicklerCommand.OpenExistingFile" Gesture="Ctrl+O" />
         <KeyBinding Command="w:PicklerCommand.About" Gesture="F1" />
@@ -121,6 +125,8 @@
                         <Image Source="images/app-icons/font.png" />
                     </MenuItem.Icon>
                 </MenuItem>
+                <MenuItem x:Name="mFind" Header="Find" Command="w:PicklerCommand.Find"/>
+                <MenuItem x:Name="mReplace" Header="Replace" Command="w:PicklerCommand.Replace"/>
             </MenuItem>
             <MenuItem x:Name="mHelp" Header="_Help">
                 <MenuItem x:Name="mAbout" Header="_About..." Click="AboutOpen" >

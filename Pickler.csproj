@@ -43,7 +43,7 @@
     <ApplicationIcon>Pickler.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>Pickler.snk</AssemblyOriginatorKeyFile>
@@ -68,6 +68,7 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -182,7 +183,12 @@
     <Resource Include="images\sb-logo.png" />
     <Resource Include="images\slices.bmp" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="FindReplace\FindReplace.csproj">
+      <Project>{F6237B7D-9A3B-4F55-961B-72035B0DEA4D}</Project>
+      <Name>FindReplace</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
