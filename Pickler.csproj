@@ -144,9 +144,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.config" />
-    <Content Include="components\ICSharpCode.AvalonEdit.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="deploy\Pickler.iss" />
     <Content Include="deploy\UninsHs.exe" />
     <None Include="packages.config" />
